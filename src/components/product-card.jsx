@@ -1,15 +1,17 @@
 import React from 'react';
 
-function ProductCard({ product }) {
-    <div>
-        <img
-            src={product.image}
-            alt={product.name}
-            
-        />
-        <h2>{product.name}</h2>
-        <p>${product.price}</p>
-    </div>
+function ProductCard({ name, image, price }) {
+    return (
+        <div>
+            <img
+                src={image}
+                alt={name}
+                
+            />
+            <h2>{name}</h2>
+            <p>${price}</p>
+        </div>
+    )
 }
 
 export default ProductCard;

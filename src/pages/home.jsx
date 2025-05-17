@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductCard from '../components/product-card';
 
 function Home() {
-    const [products, setProducts] = React.useState([]);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('https://cart-api.alexrodriguez.workers.dev/products')
+        .then(response => response.json())
+        .then(data => setProducts(data))
+    }, []);
 
     return (
     <>
@@ -15,7 +21,10 @@ function Home() {
             <div className="card-container flex justify-center">
                 {products.map(product => (
                     <ProductCard
-                        key=
+                        key={product.id}
+                        name={product.name}
+                        image={product.image}
+                        price={product.price}
                     />
                 ))}
             </div>
