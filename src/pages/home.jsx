@@ -1,7 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import ProductCard from '../components/product-card';
 
 function Home() {
+    const [products, setProducts] = React.useState([]);
 
     return (
     <>
@@ -14,7 +15,7 @@ function Home() {
             <div className="card-container flex justify-center">
                 {products.map(product => (
                     <ProductCard
-                    
+                        key=
                     />
                 ))}
             </div>
