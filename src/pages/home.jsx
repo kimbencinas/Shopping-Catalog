@@ -13,8 +13,8 @@ function Home() {
     return (
     <>
         <div>
-            <nav className="bg-blue-400 p-4 flex justify-between font-bold">
-                <p>Digital Shop</p>
+            <nav className="bg-linear-to-r from-blue-400 to-violet-500 p-4 flex justify-between font-bold">
+                <p className="text-white">Digital Shop</p>
                 <p>Cart</p>
             </nav>
             <h1 className="font-semibold text-2xl text-center mt-8">Shopping Catalog</h1>

@@ -1,14 +1,15 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import ProductDetailPage from './pages/product-detail';
+import Home from './pages/Home';
 
 function App() {
 
   return (
-    <>
-      <nav class="bg-blue-400 p-4 flex justify-between font-bold">
-        <p>Digital Shop</p>
-        <p>Cart</p>
-      </nav>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/products/:id" element={<ProductDetailPage />} />
+    </Routes>
   )
 }
 
