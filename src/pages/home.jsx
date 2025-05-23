@@ -6,6 +6,7 @@ import CategoriesList from '../components/categories-list';
 
 function Home() {
     const [products, setProducts] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
         fetch('https://cart-api.alexrodriguez.workers.dev/products')
@@ -21,17 +22,21 @@ function Home() {
         });
     }, []);
 
+    const filteredProducts = selectedCategory
+        ? products.filter(product => product.category === selectedCategory)
+        : products;
+
     return (
     <>
         <div>
             <Navbar />  
             <div className="bg-gray-100 min-h-screen">
-                <div className="flex ">
+                <div className="flex justify-evenly items-center">
                     <h1 className="font-semibold text-2xl text-center pt-12">Shopping Catalog</h1>
-                    <CategoriesList />
+                    <CategoriesList setSelectedCategory={setSelectedCategory} />
                 </div>
                 <div className="card-container md:flex justify-center xs:flex xs:flex-col mt-4">
-                    {products.map(product => (
+                    {filteredProducts.map(product => (
                         <ProductCard
                             key={product.id}
                             id={product.id}

@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
-function CategoriesList() {
+function CategoriesList({ setSelectedCategory}) {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState(null);
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -38,7 +37,7 @@ function CategoriesList() {
                 onClick={() => setIsOpen(!isOpen)}
                 className="inline-flex justify-between border border-gray-400"
             >
-            {selectedCategory || 'Select a category'}
+            Select a category
             <svg
                 className="ml-2 h-5 w-5"
                 viewBox="0 0 20 20"
