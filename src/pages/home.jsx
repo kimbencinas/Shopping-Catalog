@@ -31,7 +31,7 @@ function Home() {
         <div>
             <Navbar />  
             <div className="bg-gray-100 min-h-screen">
-                <div className="flex justify-evenly items-center">
+                <div className="xs:flex xs:flex-col xs:items-center md:flex justify-evenly items-center">
                     <h1 className="font-semibold text-2xl text-center pt-12">Shopping Catalog</h1>
                     <CategoriesList setSelectedCategory={setSelectedCategory} />
                 </div>

@@ -32,10 +32,10 @@ function CategoriesList({ setSelectedCategory}) {
     };
     
     return (
-        <div className="relative inline-block text-left">
+        <div className="relative inline-block text-left xs:self-center xs:mx-auto">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex justify-between border border-gray-400"
+                className="inline-flex justify-between border border-gray-400 xs:justify-center"
             >
             Select a category
             <svg
